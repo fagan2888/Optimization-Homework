@@ -2,12 +2,10 @@ from gurobipy import *
 
 
 # create a model
-m = Model("problem 2")
+m = Model("problem 3")
 
 # create variables
-# x1 := oz that process 1 produced
-# x2 := oz that process 2 produced
-# x3 := hiring hours
+# xi, j := represents method i for j product (gas or heating oil)
 x1 = m.addVar(vtype=GRB.CONTINUOUS, name="x1", lb=0)
 x2 = m.addVar(vtype=GRB.CONTINUOUS, name="x2", lb=0)
 x3 = m.addVar(vtype=GRB.CONTINUOUS, name="x3", lb=0)
@@ -17,18 +15,14 @@ m.update()
 
 # set objective
 m.setObjective(
-    5*x1 + 5*x2 - 3*(1/3*x1 + 2/5*x2) - 2*(2/3*x1 + 3/5*x2) - 100*x3,
-    GRB.MAXIMIZE
+    3*x1 - 2*x2,
+    GRB.MINIMIZE
 )
 
-# add constraints
-# max labors are 20000
-# max chemicals are 35000
-m.addConstr(1/3*x1 + 2/5*x2 <= 20000, "c1")
-m.addConstr(2/3*x1 + 3/5*x2 <= 35000, "c2")
-# the number of product should larger than
-# the number of sells
-m.addConstr(x1 + x2 - 200*x3 - 1000 >= 0, "c3")
+# add constraints 
+m.addConstr(3*x1 + x2 - 12 <= 0, "c1")
+m.addConstr(3*x1 - 2*x2 - x3 == 12, "c2")
+m.addConstr(x1 - 2 >= 0, "c3")
 
 # optimize
 m.optimize()
