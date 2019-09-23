@@ -5,8 +5,8 @@ from gurobipy import *
 m = Model("problem 2")
 
 # create variables
-# x1 := oz that process 1 produced
-# x2 := oz that process 2 produced
+# x1 := produce times of process 1
+# x2 := produce times of process 2
 # x3 := hiring hours
 x1 = m.addVar(vtype=GRB.CONTINUOUS, name="x1", lb=0)
 x2 = m.addVar(vtype=GRB.CONTINUOUS, name="x2", lb=0)
@@ -17,18 +17,18 @@ m.update()
 
 # set objective
 m.setObjective(
-    5*x1 + 5*x2 - 3*(1/3*x1 + 2/5*x2) - 2*(2/3*x1 + 3/5*x2) - 100*x3,
+    15*x1 + 25*x2 - 100*x3 - 3*1*x1 - 2*2*x1 - 3*2*x2 - 2*3*x2,
     GRB.MAXIMIZE
 )
 
 # add constraints
 # max labors are 20000
 # max chemicals are 35000
-m.addConstr(1/3*x1 + 2/5*x2 <= 20000, "c1")
-m.addConstr(2/3*x1 + 3/5*x2 <= 35000, "c2")
+m.addConstr(x1 + 2*x2 <= 20000, "c1")
+m.addConstr(2*x1 + 3*x2 <= 35000, "c2")
 # the number of product should larger than
 # the number of sells
-m.addConstr(x1 + x2 - 200*x3 - 1000 >= 0, "c3")
+m.addConstr(3*x1 + 5*x2 - 200*x3 - 1000 == 0, "c3")
 
 # optimize
 m.optimize()
