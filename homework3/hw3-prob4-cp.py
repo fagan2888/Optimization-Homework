@@ -2,7 +2,7 @@ from gurobipy import *
 
 
 # create a model
-m = Model("problem 4")
+m = Model("problem 4 for the column player")
 
 # create variables
 y1 = m.addVar(vtype=GRB.CONTINUOUS, name="y1", lb=0)

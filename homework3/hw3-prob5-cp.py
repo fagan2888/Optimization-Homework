@@ -2,10 +2,9 @@ from gurobipy import *
 
 
 # create a model
-m = Model("problem 4")
+m = Model("problem 5 for the column player")
 
 # create variables
-# xi, j := represents method i for j product (gas or heating oil)
 y1 = m.addVar(vtype=GRB.CONTINUOUS, name="y1", lb=0)
 y2 = m.addVar(vtype=GRB.CONTINUOUS, name="y2", lb=0)
 y3 = m.addVar(vtype=GRB.CONTINUOUS, name="y3", lb=0)
