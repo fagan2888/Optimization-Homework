@@ -27,27 +27,27 @@ fe = m.addVar(vtype=GRB.INTEGER, name="fe", ub=20, lb=0)
 ge = m.addVar(vtype=GRB.INTEGER, name="ge", ub=30, lb=0)
 fg = m.addVar(vtype=GRB.INTEGER, name="fg", ub=70, lb=0)
 
-ba = m.addVar(vtype=GRB.INTEGER, name="ba", lb=0)
-ca = m.addVar(vtype=GRB.INTEGER, name="ca", lb=0)
-ad = m.addVar(vtype=GRB.INTEGER, name="ad", lb=0)
-ea = m.addVar(vtype=GRB.INTEGER, name="ea", lb=0)
-fa = m.addVar(vtype=GRB.INTEGER, name="fa", lb=0)
-ga = m.addVar(vtype=GRB.INTEGER, name="ga", lb=0)
-cb = m.addVar(vtype=GRB.INTEGER, name="cb", lb=0)
-bd = m.addVar(vtype=GRB.INTEGER, name="bd", lb=0)
-eb = m.addVar(vtype=GRB.INTEGER, name="eb", lb=0)
-bf = m.addVar(vtype=GRB.INTEGER, name="bf", lb=0)
-bg = m.addVar(vtype=GRB.INTEGER, name="bg", lb=0)
-dc = m.addVar(vtype=GRB.INTEGER, name="dc", lb=0)
-ec = m.addVar(vtype=GRB.INTEGER, name="ec", lb=0)
-cf = m.addVar(vtype=GRB.INTEGER, name="cf", lb=0)
-gc = m.addVar(vtype=GRB.INTEGER, name="gc", lb=0)
-ed = m.addVar(vtype=GRB.INTEGER, name="ed", lb=0)
-df = m.addVar(vtype=GRB.INTEGER, name="df", lb=0)
-gd = m.addVar(vtype=GRB.INTEGER, name="gd", lb=0)
-ef = m.addVar(vtype=GRB.INTEGER, name="ef", lb=0)
-eg = m.addVar(vtype=GRB.INTEGER, name="eg", lb=0)
-gf = m.addVar(vtype=GRB.INTEGER, name="gf", lb=0)
+ba = m.addVar(vtype=GRB.INTEGER, name="ba", ub=40, lb=0)
+ca = m.addVar(vtype=GRB.INTEGER, name="ca", ub=30, lb=0)
+ad = m.addVar(vtype=GRB.INTEGER, name="ad", ub=120, lb=0)
+ea = m.addVar(vtype=GRB.INTEGER, name="ea", ub=12, lb=0)
+fa = m.addVar(vtype=GRB.INTEGER, name="fa", ub=60, lb=0)
+ga = m.addVar(vtype=GRB.INTEGER, name="ga", ub=40, lb=0)
+cb = m.addVar(vtype=GRB.INTEGER, name="cb", ub=30, lb=0)
+bd = m.addVar(vtype=GRB.INTEGER, name="bd", ub=70, lb=0)
+eb = m.addVar(vtype=GRB.INTEGER, name="eb", ub=15, lb=0)
+bf = m.addVar(vtype=GRB.INTEGER, name="bf", ub=40, lb=0)
+bg = m.addVar(vtype=GRB.INTEGER, name="bg", ub=12, lb=0)
+dc = m.addVar(vtype=GRB.INTEGER, name="dc", ub=90, lb=0)
+ec = m.addVar(vtype=GRB.INTEGER, name="ec", ub=11, lb=0)
+cf = m.addVar(vtype=GRB.INTEGER, name="cf", ub=20, lb=0)
+gc = m.addVar(vtype=GRB.INTEGER, name="gc", ub=60, lb=0)
+ed = m.addVar(vtype=GRB.INTEGER, name="ed", ub=40, lb=0)
+df = m.addVar(vtype=GRB.INTEGER, name="df", ub=15, lb=0)
+gd = m.addVar(vtype=GRB.INTEGER, name="gd", ub=20, lb=0)
+ef = m.addVar(vtype=GRB.INTEGER, name="ef", ub=20, lb=0)
+eg = m.addVar(vtype=GRB.INTEGER, name="eg", ub=30, lb=0)
+gf = m.addVar(vtype=GRB.INTEGER, name="gf", ub=70, lb=0)
 
 
 # integrate new variables
@@ -82,23 +82,24 @@ print("Obj Value: ", m.objVal)
 
 '''
 obj value: 1.359
-ab 25.0
-da 15.0
+ab 10.0
 ae 12.0
 ag 40.0
 db 70.0
 be 15.0
-fb 27.0
+fb 30.0
 ce 11.0
-cg 60.0
+cg 48.0
 de 40.0
 dg 20.0
 fe 20.0
 ge 30.0
-fg 58.0
-cb 10.0
+fg 70.0
+cb 22.0
+df 15.0
 
 ac 0.0
+da 0.0
 af 0.0
 bc 0.0
 gb 0.0
@@ -120,7 +121,6 @@ ec 0.0
 cf 0.0
 gc 0.0
 ed 0.0
-df 0.0
 gd 0.0
 ef 0.0
 eg 0.0
