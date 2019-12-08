@@ -35,3 +35,12 @@ for v in m.getVars():
 
 print("-"*15)
 print("Obj Value: ", m.objVal)
+
+'''
+xa 10000.0
+xh -0.0
+rm -0.0
+rs 1.0
+---------------
+Obj Value:  77200000.0
+'''
