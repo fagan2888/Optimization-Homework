@@ -22,7 +22,7 @@ m.setObjective(
 
 # add constraints
 m.addConstr(xa + xh <= 10000)
-m.addConstr(rm*(xh - 3*xa) >= 0)
+m.addConstr((xh - 3*xa) >= -1000*(1 - rm))
 m.addConstr(rm + rs == 1)
 
 # optimize
