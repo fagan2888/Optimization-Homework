@@ -22,7 +22,7 @@ m.setObjective(
 
 # add constraints
 m.addConstr(xa + xh <= 10000)
-m.addConstr((xh - 3*xa) >= -1000*(1 - rm))
+m.addConstr((xh - 3*xa) >= -999999999999*(1 - rm))
 m.addConstr(rm + rs == 1)
 
 # optimize
@@ -38,8 +38,8 @@ print("Obj Value: ", m.objVal)
 
 '''
 xa 10000.0
-xh -0.0
-rm -0.0
+xh 0.0
+rm 0.0
 rs 1.0
 ---------------
 Obj Value:  77200000.0
