@@ -28,3 +28,7 @@ if __name__ == "__main__":
         if n > k and ind > 0:
             print("the smallest value: ", ind)
             break
+
+'''
+the smallest value:  1509
+'''
